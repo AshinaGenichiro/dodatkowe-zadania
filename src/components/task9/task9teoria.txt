@@ -1,0 +1,47 @@
+Zadanie 1 — Teoria 
+Pytanie: Jakie są dwie główne fazy przetwarzania komponentu w Reactcie? W której fazie możesz użyć document.querySelector(), a w której nie? 
+1 Faza Renderowania: proces wewnętrzny wywołujacy funkcje komponentu i uzyskuje obiekty reprezentujące strukture, nic nie trafai do dom
+2 faza Commit Phase: React DOM dodaje elementy do drzewa DOM dopiero tutaj elementy są dostępne za pomoca document.querySelector()
+Zadanie 2 — Analiza 
+Zadanie: Wyjaśnij, co będzie wypisane w konsoli i na ekranie dla tego kodu: 
+
+export default function App() { 
+ 
+ console.log('1: Start App'); 
+ const button = document.querySelector('button'); 
+ console.log('2: Button:', button); 
+ 
+ return ( 
+ <> 
+  <h1>Tytuł</h1> 
+  <button>Kliknij</button> 
+ </> 
+ ); 
+} 
+Output : "1. Start App", "2:Button:,null" 
+
+Zadanie 3 — Porównanie 
+Zadanie: Porównaj te dwa podejścia. Które jest prawidłowe w React i dlaczego? 
+
+Podejście A (tradycyjne JavaScript): 
+const button = document.querySelector('button'); 
+button.addEventListener('click', () => { 
+ const p = document.querySelector('p'); 
+ p.textContent = 'Spoiler odkryty!'; 
+}); 
+
+Podejście B (React, które nauczymy się za chwilę): 
+export default function MovieCard() { 
+ const [isSpoilerShown, setIsSpoilerShown] = useState(false); 
+ return ( 
+ <> 
+  <button onClick={() => setIsSpoilerShown(true)}> 
+  Pokaż spoiler 
+  </button> 
+  {isSpoilerShown && <p>Spoiler odkryty!</p>} 
+ </> 
+ ); 
+} 
+Prawidłowe podejście to podejscie B, ponieważ jest użyty usestate który jest wydajniejszy, przypisuje funkcje onClick do koponentu i react sam ja podpina kiedy jest na to moment
+
+  
