@@ -1,0 +1,4 @@
+Zadanie 1 — Teoria 
+Pytanie: Wyjaśnij, czemu dwa niezależne komponenty (np. Przycisk i Licznik) nie mogą bezpośrednio się komunikować. Jak rozwiązuje to podnoszenie stanu? 
+ponieważ są od siebie odizolowane a ich stan(usestate) jest prywatny, komponenty sa na tym samym poziomie. przenosimy stan do rodzica i komunikacja odbywa sie za pomoca propsow
+ 

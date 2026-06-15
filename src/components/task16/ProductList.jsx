@@ -1,3 +1,13 @@
+/*
+*******************************************************
+Nazwa Funkcji: ProductList
+Opis Funkcji: Funkcja bierze liste produktów z usestate i wypisuje jezeli produkty sie zgadzaja
+parametry: product - produkty w useState
+zwracany typ i opis: funckja wypisuje produkty jezeli istnieja
+autor:kacper
+*******************************************************
+*/
+
 function ProductList({ products }) {
 
 return (
