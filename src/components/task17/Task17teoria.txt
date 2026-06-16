@@ -1,0 +1,3 @@
+Zadanie 1 — Teoria 
+Pytanie: Co się stanie ze stanem komponentu, gdy ten komponent zostanie zniszczony (unmounted)? Dlaczego? 
+stan tego komponentu znika, poniewaz w react stan jest związany z obenością kompnentu w jsx, gdy komponent przestaje byc renderowany react usuwa go z pamięci dlatego dane trzeba przenieść do rodzica 

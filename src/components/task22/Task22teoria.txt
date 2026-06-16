@@ -1,0 +1,7 @@
+Zadanie 1 — Teoria 
+Pytanie: Czym różni się CSS–in–JS od CSS Modules? Jakie są główne zalety pisania stylów w JavaScript? 
+css in js jest pisany w tym samym pliku co komponent a css modules jest w osobnym pliku ktory jest importowany do komponentu
+scooping automatyczny brak konfilktow
+dynamiczne style
+co-lacation komponent i style w jednym pliku
+elimiacja martwego kodu

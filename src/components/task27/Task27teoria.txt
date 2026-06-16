@@ -1,0 +1,5 @@
+Zadanie 1 — Teoria 
+Wyjaśnij różnicę między useEffect(() => {...}), useEffect(() => {...}, []) i useEffect(() => {...}, [count]). Kiedy każdy z nich się wykonuje? 
+useEffect(() => {...}) klikniecie przycisku zmienia state, react re renderuje komponent, brak tablicy = zawsze sie wykonuje, uzywamy głównie dla efektów bez skutków ubocznych
+useEffect(() => {...}, []) pusta tablica nie ma zadnych dependencji wykona efekt na starcie, komponent sie renderje, efekt sie wykonuje, pobrane dane ustawiaja state (komponent sie re-renderuje) nei wyykona sie ponownie bo tablica jest pusta
+useEffect(() => {...}, [count]) efket sie zmienia gdy któraś z wartości sie zmieni, jak wykoanmy efekt np dla tech i znowu klikniemy to sie nie wykona ale klinięcie np news juz spowoduje ponowny render 

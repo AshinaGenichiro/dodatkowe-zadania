@@ -1,0 +1,6 @@
+Zadanie 1 — Teoria 
+Wymień 3 sytuacje, w których warto zdefiniować funkcję czyszczącą w useEffect. Dlaczego React StrictMode w trybie deweloperskim wykonuje efekty dwukrotnie, zamiast raz? 
+1. gdy użytkownik opuszcza strone lub zmienia dane wyszukiwania
+2.Jeśli startujemy timer w useEffect musimy go wyczyścić
+3.jak usuwamy event listener 
+react wywkonuje efekty dwukrotnie ponieważ wykonuje dodatkwoe sprawdzania podczas developmentu, celowo montuje i odmontuje komponenty w trybie developerskim to zjawisko nie pojawia sie w produkcji jego celem jest upewnienie sie ze cleanup wszystko wyczyści

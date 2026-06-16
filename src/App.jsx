@@ -4,6 +4,11 @@ import FormToDo from './components/task16/FormToDo'
 import ListaToDo from './components/task16/ListaToDo'
 import StanToDo from './components/task16/StanToDo'
 import PodswietlanyPrzycisk from './components/task17/PodswietlanyPrzycisk'
+import Alert from './components/task22/Alert'
+import Button from './components/task22/Button'
+import TablicaDependencji from './components/task27/TablicaDependencji'
+import Hide from './components/task28/Hide'
+import Wyszukiwanie from './components/task28/Wyszukiwanie'
 import './App.css'
 
 /*
@@ -77,6 +82,13 @@ autor:kacper
   </>
   )
  }
+ /*
+ nazwa funkcji: Task17Part1
+ opis funkcji: funkcja ukrywa przycisk, ale zachowuje ilość kliknięc
+ parametry: brak
+ zwracany typ: zwraca dwa przyciski, ten ktory ukrywa drugi oraz ten ktory zlicza kliknięcia
+
+ */
 function Task17Part1()
 {
   const[showButton,setShowButton] = useState(true);
@@ -88,8 +100,43 @@ function Task17Part1()
   </>);
 
 }
-function App() {
+/*
+nazwa funkcji :Task17Part2
+opis funkcji: funkcja ukrywa komponenty odpowiedzialne za wpisywanie oraz wyswietlanie todolisty ale zachwouje ich zawartosc
+parametry brak
+zwracany typ: mozliwa do ukrycia todolista i formularz aby wpisac nowe zadanie
 
+*/
+function Task17Part2()
+{
+  const [showTodo, setShowTodo] = useState(true);
+  const [tasks, setTasks] = useState([]);
+  function onAddTask(taskName)
+  {
+    const newTask = {
+    id: crypto.randomUUID(),
+    name: taskName,
+    finished: false,
+    }
+    setTasks([...tasks,newTask])
+  }
+   function onToggleTask(taskID)
+  {
+    const tasksCopy = tasks.map((task) => task.id === taskID ? {...task, finished: !task.finished} : task )
+    setTasks(tasksCopy)
+  }
+  return (<>
+  <button onClick={()=> setShowTodo(!showTodo)}> {showTodo ? "Ukryj TODO ": "Pokaż TODO"}</button>
+  {showTodo && (
+    <>
+  <FormToDo onAddTask={onAddTask} />
+  <ListaToDo tasks={tasks} onToggleTask={onToggleTask} />
+    </>
+    )}
+  </>)
+}
+function App() {
+const [isVisible, setIsVisible] = useState(false);
 
   return (
     <>
@@ -98,6 +145,33 @@ function App() {
     <Task16Part2/>
     <h2>Moduł 17</h2>
     <Task17Part1/>
+    <Task17Part2/>
+    <h2>Moduł 22</h2>
+    <Alert type="success" message="Wiadomość sukcesu" />
+    <Alert type="error" message="Wiadomość błędu" />
+    <Alert type="warning" message="Wiadomość ostrzeżenia" />
+    <Alert message="Wiadomość domyślna (info)" />
+    <div style={{maxWidth:"600px"}}>
+
+    <Button variant="primary">Primary</Button>
+    <Button variant="secondary">Secondary</Button>
+    <Button variant="danger">Danger</Button>
+    <Button size="sm">Mały (sm)</Button>
+    <Button size="md">Średni (md)</Button>
+
+    <Button variant="primary" disabled>Zablokowany</Button>
+    <Button variant="danger" disabled>Zablokowany Danger</Button>
+    <Button size="lg">Duży (lg)</Button>
+    </div>
+
+
+    <Button variant="primary" fullWidth>Przycisk na całą szerokość ekranu</Button>
+    <h2>Moduł 27</h2>
+    <TablicaDependencji/>
+    <h2>Moduł 28</h2>
+    <button onClick={() => setIsVisible(!isVisible)}>{isVisible ? 'Ukryj komponent' : 'Pokaż komponent'}</button>
+    {isVisible ? <Hide /> : <p>Timer jest wyłaczony.</p>}
+    <Wyszukiwanie/>
     </>
   )
 }
