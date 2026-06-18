@@ -27,12 +27,14 @@ const StyledAlert = styled.div `
   background: ${(props) => alertStyles[props.type]?.background || alertStyles.info.background};
   color: ${(props) => alertStyles[props.type]?.color || alertStyles.info.color};`
   /*
+  *******************************************************
  nazwa funkcji: Alert
  opis funkcji: Funkcja wyswietla alert z róznymi własciwoscami wyglądowymi 
  parametry: message - wiadomosc
  type- typ alertu
  zwracany typ: alert ktory wyglada w inny sposob 
 autor: kacper
+*******************************************************
  */
 function Alert({message, type= 'info'})
 {

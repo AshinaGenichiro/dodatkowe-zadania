@@ -1,10 +1,12 @@
 import { useState,useEffect } from 'react'
 /*
+*******************************************************
 nazwa funkcji : Wyszukiwanie
 opis funkcji: funkcja czeka az uzytkownik wpisze tekst po czym fetchuje do api i pokazuje wynik
 parametry: brak
 zwracany typ i opis: szwraca uzytkownikowi inputa oraz liste wyników pobrania z api 
 autor: kacper
+*******************************************************
 */
 function Wyszukiwanie()
 {

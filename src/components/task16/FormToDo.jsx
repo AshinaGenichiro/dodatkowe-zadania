@@ -1,8 +1,10 @@
 /*
+*******************************************************
 Nazwa funkcji: FormToDo
 Opis funkcji: Funkcja przesyła formularz który przez to ze przyjmuje funkcje jako parametr to w app.js dodaje ja do tablicy obietkow 
 parametry : onAddTask - funkcja przesyłająca zadanie do ToDoListy
 zwracany typ i opis: funkcja zwraca formularz który opbsługuje wpisywanie rzeczy do listy
+*******************************************************
 */
 
 import { useState } from "react";
