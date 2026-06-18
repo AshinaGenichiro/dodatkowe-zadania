@@ -1,9 +1,12 @@
 import { useState,useEffect } from 'react'
 /*
+*******************************************************
 nazwa funkcji : TablicaDependencji
 opis funkcji: funkcja wybiera 3 komentarze albo posty z api i wyświetla je uzytkownikowi 
 parametry: brak
 zwracany typ i opis: zwraca przyciski, w zaleznosci od tego który sie kliknie to ładuje posty/komentarze  i wyświetla
+autor: kacper
+*******************************************************
 */
 function TablicaDependencji()
 {

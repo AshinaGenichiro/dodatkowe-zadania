@@ -32,7 +32,7 @@ const StyledAlert = styled.div `
  parametry: message - wiadomosc
  type- typ alertu
  zwracany typ: alert ktory wyglada w inny sposob 
-
+autor: kacper
  */
 function Alert({message, type= 'info'})
 {

@@ -12,11 +12,13 @@ import Wyszukiwanie from './components/task28/Wyszukiwanie'
 import './App.css'
 
 /*
+*******************************************************
 nazwa funkcji:Task16part1
 opis funkcji: funkcja sprawdza co użytkownik wpisał w input, potem sprawdza czy jego input zgadza się z listą produktów(everyProduct)
 parametry: brak
 zwracany typ i opis : zwraca label z inputem oraz komponent ProductList
 autor kacper
+*******************************************************
 */
 function Task16Part1(){
   const [product, setProduct] = useState("")
@@ -36,21 +38,25 @@ function Task16Part1(){
 }
 }
 /*
+*******************************************************
 Nazwa funkcji:Task16Part2
 opis funkcji: funkcja łączy w sobie komponenty dzieki temu maja dostep do usestate tasks
 parametry : brak
 zwracany typ: zwraca 3 komponenty formularz,liste, oraz ilosc komponentów wykonanych
 autor:kacper
+*******************************************************
 */
  function Task16Part2()
  {
   const[tasks,setTask] = useState([])
   /*
+  *******************************************************
   nazwa funkcji : onToggleTask
   opis funkcji : funkcja tworzy kopie tablicy task, uzytkownik moze kliknąć czy zadanie zostało wywołane i potem wysyła tą kopie do orginalnej tablicy w usestate  
   parametr: taskID - id tasku który został wykonany
   zwracany typ i opis : brak
   autor : kacper
+  *******************************************************
   */
   function onToggleTask(taskID)
   {
@@ -58,11 +64,13 @@ autor:kacper
     setTask(tasksCopy)
   }
     /*
+    *******************************************************
   nazwa funkcji : onAddTask
   opis funkcji : funkcja dodaje zadanie do listy pobiera ona te informacji z komponentu FormToDo, 
   parametr: taskName - nazwa zadania
   zwracany typ i opis : brak
   autor : kacper
+  *******************************************************
   */
   function onAddTask(taskName)
   {
@@ -83,11 +91,13 @@ autor:kacper
   )
  }
  /*
+ *******************************************************
  nazwa funkcji: Task17Part1
  opis funkcji: funkcja ukrywa przycisk, ale zachowuje ilość kliknięc
  parametry: brak
  zwracany typ: zwraca dwa przyciski, ten ktory ukrywa drugi oraz ten ktory zlicza kliknięcia
-
+ autor: kacper
+ *******************************************************
  */
 function Task17Part1()
 {
@@ -101,16 +111,27 @@ function Task17Part1()
 
 }
 /*
+*******************************************************
 nazwa funkcji :Task17Part2
 opis funkcji: funkcja ukrywa komponenty odpowiedzialne za wpisywanie oraz wyswietlanie todolisty ale zachwouje ich zawartosc
 parametry brak
 zwracany typ: mozliwa do ukrycia todolista i formularz aby wpisac nowe zadanie
-
+autor: kacper
+*******************************************************
 */
 function Task17Part2()
 {
   const [showTodo, setShowTodo] = useState(true);
   const [tasks, setTasks] = useState([]);
+  /*
+  *******************************************************
+  nazwa funkcji : onAddTask
+  opis funkcji : funkcja dodaje zadanie do listy pobiera ona te informacji z komponentu FormToDo, 
+  parametr: taskName - nazwa zadania
+  zwracany typ i opis : brak
+  autor : kacper
+  *******************************************************
+  */
   function onAddTask(taskName)
   {
     const newTask = {
@@ -120,6 +141,15 @@ function Task17Part2()
     }
     setTasks([...tasks,newTask])
   }
+    /*
+    *******************************************************
+  nazwa funkcji : onToggleTask
+  opis funkcji : funkcja tworzy kopie tablicy task, uzytkownik moze kliknąć czy zadanie zostało wywołane i potem wysyła tą kopie do orginalnej tablicy w usestate  
+  parametr: taskID - id tasku który został wykonany
+  zwracany typ i opis : brak
+  autor : kacper
+  *******************************************************
+  */
    function onToggleTask(taskID)
   {
     const tasksCopy = tasks.map((task) => task.id === taskID ? {...task, finished: !task.finished} : task )

@@ -4,7 +4,7 @@
  parametry: onClick - funkcja dodające kliknięcia
  clicks- liczba klikniec 
  zwracany typ: przycisk dzieki któremu mozna dodawac klikniecia
-
+ autor: kacper
  */
 function PodswietlanyPrzycisk({onClick, clicks})
 {

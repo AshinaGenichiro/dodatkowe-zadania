@@ -56,11 +56,13 @@ ${(props) => props.disabled && `
   `}
 `
 /*
+*******************************************************
 nazwa funkcji: Button
 opis funkcji: wyswietlanie róznych typów przycisku 
 parametry brak
 zwracany typ : przycisk ktory moze miec różne właściwosci wyglądowe
-
+autor: kacper
+*******************************************************
 */
 function Button ({
   variant = 'primary', 

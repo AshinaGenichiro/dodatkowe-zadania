@@ -4,6 +4,7 @@ nazwa funkcji : Hide
 opis funkcji: odlicza ile sekund mineło od kliknięcia przycisku który jest odpowiedzialny za "uruchomienie" tego komponentu
 parametry: brak
 zwracany typ i opis: czas ile mineło od klikniecia w przycisk odkrycia 
+autor: kacper
 */
 function Hide()
 {
